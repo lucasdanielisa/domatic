@@ -1,9 +1,9 @@
+
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f5f7fa;
+  background-color: #15c6cc;
   color: #1f1f1f;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -22,7 +22,7 @@ html {
 }
 
 .nav-link:hover {
-  color: #007BFF !important;
+  color: #0057b8 !important;
 }
 
 /* FORMULARIOS */
@@ -90,7 +90,7 @@ form button {
   font-weight: bold;
   z-index: 2;
   position: relative;
-  box-shadow: none; /* quitamos la sombra */
+  box-shadow: none;
   transition: background-color 0.3s ease;
 }
 
@@ -102,20 +102,19 @@ form button {
   display: none;
 }
 
-
 /* SECCIONES */
 section {
   padding: 60px 20px;
 }
 
 .section-light {
-  background-color: #f8f9fa;
-  color: #000;
+  background-color: #ffffff;
+  color: #1f1f1f;
 }
 
 .section-dark {
-  background-color: #0f0f0f;
-  color: #fff;
+  background-color: #1c1f2b;
+  color: #f5f7fa;
 }
 
 .section-dark .container {
@@ -138,7 +137,7 @@ section {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background-color: #f0f2f5;
+  background-color: #e3e7ec;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,12 +146,12 @@ section {
 }
 
 .icon-circle i {
-  color: #007bff;
+  color: #0057b8;
   transition: transform 0.3s ease;
 }
 
 .icon-circle:hover {
-  background-color: #007bff;
+  background-color: #0057b8;
   transform: scale(1.1);
 }
 
@@ -185,18 +184,23 @@ section {
   margin-top: 0;
   padding-top: 80px;
 }
+
 /* MARCAS */
 #marcas img {
   max-height: 60px;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
+
 #marcas img:hover {
   filter: none;
 }
+
 #marcas h2 {
-  color: #000; /* o el color que quieras */
+  color: #1f1f1f;
 }
+
+/* WHATSAPP */
 .whatsapp-container {
   position: fixed;
   bottom: 20px;
@@ -243,11 +247,7 @@ section {
   color: white !important;
 }
 
-
-
-
-
-/* En pantallas chicas solo el ícono */
+/* Responsive WhatsApp */
 @media (max-width: 576px) {
   .whatsapp-text {
     display: none;
@@ -257,6 +257,7 @@ section {
     padding: 12px;
   }
 }
+
 @keyframes bounce-whatsapp {
   0%, 100% {
     transform: translateY(0);
@@ -268,4 +269,10 @@ section {
 
 .whatsapp-float {
   animation: bounce-whatsapp 2s infinite;
+}
+
+/* FOOTER */
+footer {
+  background-color: #21242e;
+  color: #f5f7fa;
 }
