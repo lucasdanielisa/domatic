@@ -189,7 +189,7 @@ section {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .floating-whatsapp {
@@ -200,12 +200,15 @@ section {
   height: 60px;
   background-color: #25d366;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
 .floating-whatsapp:hover {
@@ -217,17 +220,17 @@ section {
   color: white;
 }
 
-.whatsapp-text {
-  display: inline;
-  font-weight: 600;
-}
 .floating-whatsapp:focus,
 .floating-whatsapp:focus-visible,
-.floating-whatsapp:active {
+.floating-whatsapp:active,
+.floating-whatsapp:visited {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
+  background-color: #25d366 !important;
+  color: white !important;
 }
+
 
 
 
