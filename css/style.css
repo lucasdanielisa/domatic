@@ -176,3 +176,12 @@ section {
   margin-top: 0;
   padding-top: 80px;
 }
+/* MARCAS */
+#marcas img {
+  max-height: 60px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+#marcas img:hover {
+  filter: none;
+}
