@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DOMATIC | Tecnología que te simplifica</title>
@@ -70,6 +72,25 @@
   </style>
 </head>
 <body>
+<!-- NAVBAR MEJORADO -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background-color: #1f1f1f; border-bottom: 1px solid rgba(255,255,255,0.1);">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#inicio">DOMATIC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 <!-- HERO -->
 <div class="hero" id="inicio">
@@ -80,35 +101,56 @@
   </div>
 </div>
 
-<!-- LO QUE HACEMOS -->
-<section class="section-light text-center" id="servicios">
+<!-- SECCIÓN: LO QUE HACEMOS -->
+<section class="section-light text-center py-5 border-top" id="servicios">
   <div class="container">
-    <h2 class="mb-5">Lo que hacemos</h2>
+    <h2 class="display-5 fw-bold mb-4">Nuestros Servicios</h2>
+    <p class="text-muted mb-5">Soluciones a medida para hogares, empresas y proyectos industriales</p>
+
     <div class="row g-4">
-      <div class="col-md-4">
-        <div class="icon-box">
-          <i class="fas fa-home"></i>
-          <h5>Domótica Residencial</h5>
-          <p>Control inteligente de iluminación, persianas, climatización y más.</p>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 border-0 shadow-sm transition-card">
+          <div class="card-body">
+            <div class="icon-circle mb-3">
+              <i class="fas fa-home fa-2x"></i>
+            </div>
+            <h5 class="fw-semibold mb-2">Domótica Residencial</h5>
+            <p class="text-secondary small">Automatización de luces, clima, persianas, cerraduras y más desde tu smartphone o voz.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="icon-box">
-          <i class="fas fa-video"></i>
-          <h5>Seguridad Electrónica</h5>
-          <p>Cámaras, sensores, alarmas y control de acceso conectados 24/7.</p>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 border-0 shadow-sm transition-card">
+          <div class="card-body">
+            <div class="icon-circle mb-3">
+              <i class="fas fa-warehouse fa-2x"></i>
+            </div>
+            <h5 class="fw-semibold mb-2">Portones Inteligentes</h5>
+            <p class="text-secondary small">Apertura remota, cierre seguro y detección de obstáculos para mayor confort y seguridad.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="icon-box">
-          <i class="fas fa-warehouse"></i>
-          <h5>Automatización de portones</h5>
-          <p>Apertura desde el celular, comandos de voz o geolocalización.</p>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card h-100 border-0 shadow-sm transition-card">
+          <div class="card-body">
+            <div class="icon-circle mb-3">
+              <i class="fas fa-shield-alt fa-2x"></i>
+            </div>
+            <h5 class="fw-semibold mb-2">Seguridad Electrónica</h5>
+            <p class="text-secondary small">Cámaras, alarmas, sensores y control de acceso inteligente, con notificaciones en tiempo real.</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+
+
 
 <!-- POR QUÉ ELEGIRNOS -->
 <section class="section-dark text-center" id="beneficios">
@@ -149,43 +191,61 @@
 
 
 <!-- GALERÍA DE PROYECTOS -->
-<section class="section-light text-center" id="proyectos">
+<section class="py-5 bg-light" id="proyectos">
   <div class="container">
-    <h2 class="mb-5">Proyectos recientes</h2>
+    <h2 class="text-center fw-bold mb-4">Proyectos Realizados</h2>
+    <p class="text-center text-muted mb-5">Algunos trabajos destacados en hogares, oficinas y predios industriales</p>
+
     <div class="row g-4">
-      <div class="col-md-4">
-        <img src="https://via.placeholder.com/600x400?text=Instalación+1" class="img-fluid rounded shadow-sm" alt="Proyecto 1">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-card shadow-sm rounded overflow-hidden">
+          <img src="https://via.placeholder.com/600x400?text=Dom%C3%B3tica+Casa" class="img-fluid" alt="Proyecto domótica">
+          <div class="p-3 bg-white">
+            <h6 class="fw-semibold mb-0">Domótica Residencial</h6>
+            <small class="text-muted">Control por voz, iluminación y clima inteligente</small>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="https://via.placeholder.com/600x400?text=Instalación+2" class="img-fluid rounded shadow-sm" alt="Proyecto 2">
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-card shadow-sm rounded overflow-hidden">
+          <img src="https://via.placeholder.com/600x400?text=Port%C3%B3n+Wi-Fi" class="img-fluid" alt="Proyecto portón">
+          <div class="p-3 bg-white">
+            <h6 class="fw-semibold mb-0">Portón Automatizado</h6>
+            <small class="text-muted">Apertura remota desde app y Alexa</small>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="https://via.placeholder.com/600x400?text=Instalación+3" class="img-fluid rounded shadow-sm" alt="Proyecto 3">
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="project-card shadow-sm rounded overflow-hidden">
+          <img src="https://via.placeholder.com/600x400?text=Acceso+Facial" class="img-fluid" alt="Proyecto seguridad">
+          <div class="p-3 bg-white">
+            <h6 class="fw-semibold mb-0">Control de Acceso</h6>
+            <small class="text-muted">Reconocimiento facial con reporte en tiempo real</small>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CONTACTO -->
-<section class="section-dark text-center" id="contacto">
+<!-- SECCIÓN NOSOTROS -->
+<section class="py-5 text-center" id="nosotros">
   <div class="container">
-    <h2 class="mb-4">¿Hablamos?</h2>
-    <p class="mb-5">Completá el formulario y un asesor te contactará a la brevedad.</p>
-    <form action="#" method="POST" class="mx-auto" style="max-width: 600px;">
-      <div class="mb-3 text-start">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" name="nombre" required>
+    <h2 class="fw-bold mb-4">Quiénes Somos</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <p class="lead text-white">
+
+          En DOMATIC brindamos soluciones profesionales en automatización, seguridad y confort, con atención personalizada y tecnología de primer nivel. 
+          Nuestra experiencia nos permite ofrecer proyectos a medida, ya sea para hogares, empresas o desarrollos industriales.
+        </p>
+        <p class="text-white-50">
+
+          Apostamos a una integración inteligente de los sistemas del entorno, combinando dispositivos físicos, conectividad Wi-Fi, control por voz y plataformas como Alexa o Google Home.
+        </p>
       </div>
-      <div class="mb-3 text-start">
-        <label class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" name="email" required>
-      </div>
-      <div class="mb-3 text-start">
-        <label class="form-label">Mensaje</label>
-        <textarea class="form-control" name="mensaje" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -193,6 +253,12 @@
 <footer class="bg-black text-white text-center py-3">
   <p class="mb-0">© 2025 DOMATIC Argentina - Todos los derechos reservados</p>
 </footer>
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 
 </body>
 </html>

@@ -1,1 +1,75 @@
 body { font-family: 'Roboto', sans-serif; background: #f8f9fa; }
+.transition-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.transition-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.icon-circle i {
+  color: #007bff;
+  transition: transform 0.3s ease;
+}
+.icon-circle:hover {
+  background-color: #007bff;
+  transform: scale(1.1);
+}
+.icon-circle:hover i {
+  color: #fff;
+  transform: scale(1.2);
+}
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.section-dark {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+.section-dark .container {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.section-dark h2 {
+  font-weight: bold;
+}
+
+.section-dark p {
+  margin-bottom: 1.2rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #007BFF !important;
+}
