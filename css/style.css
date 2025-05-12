@@ -185,6 +185,9 @@ section {
 #marcas img:hover {
   filter: none;
 }
+#marcas h2 {
+  color: #000; /* o el color que quieras */
+}
 .whatsapp-container {
   position: fixed;
   bottom: 20px;
