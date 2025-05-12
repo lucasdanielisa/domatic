@@ -30,6 +30,8 @@
 
   <!-- Estilo personalizado DOMATIC -->
   <link rel="stylesheet" href="css/domatic-final-unificado.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -202,11 +204,30 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
-<!-- BOTÓN WHATSAPP FLOTANTE CON TEXTO -->
-<a href="https://wa.me/5493874686582" class="floating-whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
+<!-- BOTÓN WHATSAPP FLOTANTE (abre modal) -->
+<a href="javascript:void(0)" class="floating-whatsapp" data-bs-toggle="modal" data-bs-target="#modalWhatsapp" title="Chateá con DOMATIC">
+  <i class="fab fa-whatsapp fa-lg"></i>
 </a>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</a>
+
+<!-- MODAL WHATSAPP -->
+<div class="modal fade" id="modalWhatsapp" tabindex="-1" aria-labelledby="modalWhatsappLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title w-100" id="modalWhatsappLabel">¿Con quién querés hablar?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <a href="https://wa.me/549387686582" target="_blank" class="btn btn-success w-100 mb-2">Lucas 💬 Domatic</a>
+        <a href="https://wa.me/5493875751700" target="_blank" class="btn btn-primary w-100">Juan 💬 Domatic</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- MODAL DE PRESUPUESTO -->
 <div class="modal fade" id="modalPresupuesto" tabindex="-1" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -356,6 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
