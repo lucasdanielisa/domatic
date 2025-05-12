@@ -9,67 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1609406353573-4f2eac07d8ea?auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.65);
-      z-index: 1;
-    }
-    .hero-content {
-      z-index: 2;
-      max-width: 800px;
-    }
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-    }
-    .btn-primary {
-      background-color: #007BFF;
-      border: none;
-      font-weight: bold;
-    }
-    .btn-primary:hover {
-      background-color: #0056b3;
-    }
-    section {
-      padding: 60px 20px;
-    }
-    .section-light {
-      background-color: #f8f9fa;
-      color: #000;
-    }
-    .section-dark {
-      background-color: #111;
-    }
-    .icon-box i {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #007BFF;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <!-- NAVBAR MEJORADO -->
@@ -91,20 +31,18 @@
   </div>
 </nav>
 
-
 <!-- HERO CON VIDEO -->
-<!-- HERO -->
 <div class="hero" id="inicio">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="video/fondo-hero.mp4" type="video/mp4">
+  <div class="video-overlay"></div>
+  <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    <source src="video/fondo-hero.mp4" type="video/mp4" />
   </video>
-  <div class="hero-content">
+  <div class="hero-content" style="position: relative; z-index: 1;">
     <h1 class="fw-bold">Tecnología que simplifica tu vida</h1>
     <p>Automatización, seguridad y confort con estilo profesional</p>
     <a href="#contacto" class="btn btn-primary btn-lg">Solicitar asesoramiento</a>
   </div>
 </div>
-
 
 
 
@@ -155,6 +93,7 @@
     </div>
   </div>
 </section>
+
 
 
 
