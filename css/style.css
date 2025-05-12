@@ -230,3 +230,15 @@ section {
     padding: 12px;
   }
 }
+@keyframes bounce-whatsapp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.whatsapp-float {
+  animation: bounce-whatsapp 2s infinite;
+}
