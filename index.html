@@ -312,27 +312,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const mensaje = document.getElementById("mensaje-exito");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const formData = new FormData(form);
-    fetch("https://formspree.io/f/xwponwyk", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-    .then(response => {
-      if (response.ok) {
-        campos.style.display = "none";
-        mensaje.style.display = "block";
-        form.reset();
-      } else {
-        alert("Error al enviar el formulario.");
-      }
-    })
-    .catch(() => alert("No se pudo enviar el formulario. Verificá tu conexión."));
-  });
+  const tipoSeleccionado = document.getElementById("tipo").value;
+  const formData = new FormData(form);
+
+  // Eliminar campos que no correspondan al tipo seleccionado
+  if (tipoSeleccionado === "camaras") {
+    formData.delete("tipo_porton");
+    formData.delete("medidas_porton");
+    formData.delete("ubicacion_porton");
+  } else if (tipoSeleccionado === "porton") {
+    formData.delete("cantidad_camaras");
+    formData.delete("ubicacion_camaras");
+  }
+
+  fetch("https://formspree.io/f/xwponwyk", {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+  .then(response => {
+    if (response.ok) {
+      campos.style.display = "none";
+      mensaje.style.display = "block";
+      form.reset();
+    } else {
+      alert("Error al enviar el formulario.");
+    }
+  })
+  .catch(() => alert("No se pudo enviar el formulario. Verificá tu conexión."));
+});
 
   // Restaurar formulario al cerrar modal
   const modalPresupuesto = document.getElementById('modalPresupuesto');
