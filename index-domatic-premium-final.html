@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOMATIC | Tecnología que te simplifica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1609406353573-4f2eac07d8ea?auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.65);
+      z-index: 1;
+    }
+    .hero-content {
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+    .btn-primary {
+      background-color: #007BFF;
+      border: none;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .section-light {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+    .section-dark {
+      background-color: #111;
+    }
+    .icon-box i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="inicio">
+  <div class="hero-content">
+    <h1 class="fw-bold">Tecnología que simplifica tu vida</h1>
+    <p>Automatización, seguridad y confort con estilo profesional</p>
+    <a href="#contacto" class="btn btn-primary btn-lg">Solicitar asesoramiento</a>
+  </div>
+</div>
+
+<!-- LO QUE HACEMOS -->
+<section class="section-light text-center" id="servicios">
+  <div class="container">
+    <h2 class="mb-5">Lo que hacemos</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-home"></i>
+          <h5>Domótica Residencial</h5>
+          <p>Control inteligente de iluminación, persianas, climatización y más.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-video"></i>
+          <h5>Seguridad Electrónica</h5>
+          <p>Cámaras, sensores, alarmas y control de acceso conectados 24/7.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-warehouse"></i>
+          <h5>Automatización de portones</h5>
+          <p>Apertura desde el celular, comandos de voz o geolocalización.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<section class="section-dark text-center" id="beneficios">
+  <div class="container">
+    <h2 class="mb-5">¿Por qué elegir DOMATIC?</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-star"></i>
+          <h6>+10 años de experiencia</h6>
+          <p>Instalaciones confiables en hogares y empresas.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-user-shield"></i>
+          <h6>Atención personalizada</h6>
+          <p>Asesoramiento a medida en cada proyecto.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-plug"></i>
+          <h6>Marcas líderes</h6>
+          <p>Trabajamos con Hikvision, Sonoff, SEG y más.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="icon-box">
+          <i class="fas fa-robot"></i>
+          <h6>Integración total</h6>
+          <p>Compatibilidad con Alexa, Google y sistemas personalizados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALERÍA DE PROYECTOS -->
+<section class="section-light text-center" id="proyectos">
+  <div class="container">
+    <h2 class="mb-5">Proyectos recientes</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/600x400?text=Instalación+1" class="img-fluid rounded shadow-sm" alt="Proyecto 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/600x400?text=Instalación+2" class="img-fluid rounded shadow-sm" alt="Proyecto 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/600x400?text=Instalación+3" class="img-fluid rounded shadow-sm" alt="Proyecto 3">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section-dark text-center" id="contacto">
+  <div class="container">
+    <h2 class="mb-4">¿Hablamos?</h2>
+    <p class="mb-5">Completá el formulario y un asesor te contactará a la brevedad.</p>
+    <form action="#" method="POST" class="mx-auto" style="max-width: 600px;">
+      <div class="mb-3 text-start">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre" required>
+      </div>
+      <div class="mb-3 text-start">
+        <label class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" name="email" required>
+      </div>
+      <div class="mb-3 text-start">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-control" name="mensaje" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center py-3">
+  <p class="mb-0">© 2025 DOMATIC Argentina - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
+
+</html>
