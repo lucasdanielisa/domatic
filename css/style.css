@@ -73,3 +73,12 @@ html {
 .nav-link:hover {
   color: #007BFF !important;
 }
+form input, form textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+form button {
+  font-weight: bold;
+}
