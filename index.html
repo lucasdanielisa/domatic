@@ -207,9 +207,7 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- BOTÓN para abrir modal -->
-
-<!-- MODAL -->
+<!-- MODAL DE PRESUPUESTO -->
 <div class="modal fade" id="modalPresupuesto" tabindex="-1" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -218,79 +216,134 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
-        <form action="https://formspree.io/f/xwponwyk" method="POST" id="formPresupuesto">
-          <div class="mb-3">
-            <label for="servicio" class="form-label">¿Qué necesitas?</label>
-            <select class="form-select" id="servicio" name="servicio" required>
-              <option value="">Seleccioná una opción</option>
-              <option value="Camaras">Cámaras</option>
-              <option value="Portones">Portones</option>
-            </select>
-          </div>
-
-          <!-- OPCIONES PARA CAMARAS -->
-          <div id="camposCamaras" style="display: none;">
+        <form id="formPresupuesto">
+          <!-- Campos del formulario -->
+          <div id="formulario-campos">
             <div class="mb-3">
-              <label for="cantidadCamaras" class="form-label">Cantidad de cámaras</label>
-              <input type="number" class="form-control" name="cantidadCamaras">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" name="nombre" id="nombre" class="form-control" required>
             </div>
+
             <div class="mb-3">
-              <label class="form-label">Ubicación</label>
-              <select class="form-select" name="ubicacionCamaras">
-                <option value="Interior">Interior</option>
-                <option value="Exterior">Exterior</option>
+              <label for="email">Correo electrónico</label>
+              <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="tipo">¿Qué producto te interesa?</label>
+              <select name="tipo" id="tipo" class="form-select" required onchange="mostrarCampos()">
+                <option value="" selected disabled>Seleccioná una opción</option>
+                <option value="camaras">Cámaras</option>
+                <option value="porton">Portón</option>
               </select>
             </div>
+
+            <!-- Cámaras -->
+            <div id="campos-camaras" style="display:none;">
+              <div class="mb-3">
+                <label>Cantidad de cámaras</label>
+                <input type="number" name="cantidad_camaras" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label>Ubicación</label>
+                <select name="ubicacion_camaras" class="form-select">
+                  <option value="interior">Interior</option>
+                  <option value="exterior">Exterior</option>
+                  <option value="ambos">Ambos</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Portón -->
+            <div id="campos-porton" style="display:none;">
+              <div class="mb-3">
+                <label>Tipo de portón</label>
+                <select name="tipo_porton" class="form-select">
+                  <option value="corredizo">Corredizo</option>
+                  <option value="levadizo">Levadizo</option>
+                  <option value="aereo">Aéreo</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label>Medidas aproximadas (ancho x alto en metros)</label>
+                <input type="text" name="medidas_porton" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label>Ubicación</label>
+                <select name="ubicacion_porton" class="form-select">
+                  <option value="interior">Interior</option>
+                  <option value="exterior">Exterior</option>
+                </select>
+              </div>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nuevo presupuesto desde DOMATIC">
+
+            <button type="submit" class="btn btn-primary w-100 mt-3">Enviar</button>
           </div>
 
-          <!-- OPCIONES PARA PORTONES -->
-          <div id="camposPortones" style="display: none;">
+          <!-- Mensaje de éxito -->
+          <div id="mensaje-exito" class="text-center fade-in" style="display:none;">
             <div class="mb-3">
-              <label for="tipoPorton" class="form-label">Tipo de portón</label>
-              <select class="form-select" name="tipoPorton">
-                <option value="Corredizo">Corredizo</option>
-                <option value="Levadizo">Levadizo</option>
-                <option value="Aereo">Aéreo</option>
-              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.97 11.03a.75.75 0 0 0 1.08.022L11.03 8l-1.06-1.06-2.002 2.003-1.002-1.003-1.06 1.06 2.063 2.03z"/>
+              </svg>
             </div>
-            <div class="mb-3">
-              <label for="medidas" class="form-label">Medida aproximada (ancho x alto)</label>
-              <input type="text" class="form-control" name="medidas">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Ubicación</label>
-              <select class="form-select" name="ubicacionPorton">
-                <option value="Interior">Interior</option>
-                <option value="Exterior">Exterior</option>
-              </select>
-            </div>
+            <h5 class="text-success mb-3">¡Gracias! Te contactaremos pronto.</h5>
+            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cerrar</button>
           </div>
-
-          <div class="mb-3">
-            <label for="mensaje" class="form-label">Comentarios adicionales</label>
-            <textarea class="form-control" name="mensaje" rows="3"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
         </form>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SCRIPT para mostrar campos según selección -->
+<!-- Scripts -->
 <script>
-  const servicio = document.getElementById('servicio');
-  const camposCamaras = document.getElementById('camposCamaras');
-  const camposPortones = document.getElementById('camposPortones');
+function mostrarCampos() {
+  const tipo = document.getElementById("tipo").value;
+  document.getElementById("campos-camaras").style.display = tipo === "camaras" ? "block" : "none";
+  document.getElementById("campos-porton").style.display = tipo === "porton" ? "block" : "none";
+}
 
-  servicio.addEventListener('change', () => {
-    camposCamaras.style.display = servicio.value === 'Camaras' ? 'block' : 'none';
-    camposPortones.style.display = servicio.value === 'Portones' ? 'block' : 'none';
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("formPresupuesto");
+  const campos = document.getElementById("formulario-campos");
+  const mensaje = document.getElementById("mensaje-exito");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    fetch("https://formspree.io/f/xwponwyk", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        campos.style.display = "none";
+        mensaje.style.display = "block";
+        form.reset();
+      } else {
+        alert("Error al enviar el formulario.");
+      }
+    })
+    .catch(() => alert("No se pudo enviar el formulario. Verificá tu conexión."));
   });
+
+  // Restaurar formulario al cerrar modal
+  const modalPresupuesto = document.getElementById('modalPresupuesto');
+  modalPresupuesto.addEventListener('hidden.bs.modal', function () {
+    campos.style.display = 'block';
+    mensaje.style.display = 'none';
+    document.getElementById("campos-camaras").style.display = "none";
+    document.getElementById("campos-porton").style.display = "none";
+  });
+});
 </script>
-
-
 
 </body>
 </html>
