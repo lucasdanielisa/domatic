@@ -61,7 +61,14 @@
   <div class="hero-content">
     <h1 class="fw-bold">Tecnología que simplifica tu vida</h1>
     <p>Automatización, seguridad y confort con estilo profesional</p>
-    <a href="#contacto" class="btn btn-primary btn-lg">Solicitar asesoramiento</a>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+  <a href="#contacto" class="btn btn-primary btn-lg" style="background-color: #1abc9c; border: none;">
+    Solicitar asesoramiento
+  </a>
+  <button type="button" class="btn btn-primary btn-lg" style="background-color: #1abc9c; border: none;" data-bs-toggle="modal" data-bs-target="#modalPresupuesto">
+    Solicitar presupuesto
+  </button>
+</div>
   </div>
 </div>
 
@@ -200,6 +207,88 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- BOTÓN para abrir modal -->
+
+<!-- MODAL -->
+<div class="modal fade" id="modalPresupuesto" tabindex="-1" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalPresupuestoLabel">Solicitar presupuesto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form action="https://formspree.io/f/xwponwyk" method="POST" id="formPresupuesto">
+          <div class="mb-3">
+            <label for="servicio" class="form-label">¿Qué necesitas?</label>
+            <select class="form-select" id="servicio" name="servicio" required>
+              <option value="">Seleccioná una opción</option>
+              <option value="Camaras">Cámaras</option>
+              <option value="Portones">Portones</option>
+            </select>
+          </div>
+
+          <!-- OPCIONES PARA CAMARAS -->
+          <div id="camposCamaras" style="display: none;">
+            <div class="mb-3">
+              <label for="cantidadCamaras" class="form-label">Cantidad de cámaras</label>
+              <input type="number" class="form-control" name="cantidadCamaras">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ubicación</label>
+              <select class="form-select" name="ubicacionCamaras">
+                <option value="Interior">Interior</option>
+                <option value="Exterior">Exterior</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- OPCIONES PARA PORTONES -->
+          <div id="camposPortones" style="display: none;">
+            <div class="mb-3">
+              <label for="tipoPorton" class="form-label">Tipo de portón</label>
+              <select class="form-select" name="tipoPorton">
+                <option value="Corredizo">Corredizo</option>
+                <option value="Levadizo">Levadizo</option>
+                <option value="Aereo">Aéreo</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="medidas" class="form-label">Medida aproximada (ancho x alto)</label>
+              <input type="text" class="form-control" name="medidas">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ubicación</label>
+              <select class="form-select" name="ubicacionPorton">
+                <option value="Interior">Interior</option>
+                <option value="Exterior">Exterior</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Comentarios adicionales</label>
+            <textarea class="form-control" name="mensaje" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT para mostrar campos según selección -->
+<script>
+  const servicio = document.getElementById('servicio');
+  const camposCamaras = document.getElementById('camposCamaras');
+  const camposPortones = document.getElementById('camposPortones');
+
+  servicio.addEventListener('change', () => {
+    camposCamaras.style.display = servicio.value === 'Camaras' ? 'block' : 'none';
+    camposPortones.style.display = servicio.value === 'Portones' ? 'block' : 'none';
+  });
+</script>
 
 
 
